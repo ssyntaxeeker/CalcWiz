@@ -11,7 +11,6 @@ const operatorOrders = {
 
 const parser = require('./parser.js')
 const database = require('./database.js');
-const { managerToFetchingStrategyOptions } = require('discord.js');
 
 const precedence = (operator, orderMode) => {
     for (let order in operatorOrders[orderMode]) {
@@ -52,6 +51,7 @@ const applyOperator = (operator, a, b, angle) => {
         csch: (a, b) => (1 / Math.sinh(degToRad(b))).toFixed(13),
         'log': (a, b) => Math.log(b),
         'ln': (a, b) => Math.log(b),
+        'sqrt': (a,b) => Math.sqrt(b),
         '\+': (a, b) => a + b,
         '\-': (a, b) => a - b,
         '\*': (a, b) => a * b,

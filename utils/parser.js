@@ -32,10 +32,9 @@ module.exports = function (uuid, expression) {
             return k;
         }
     });
-    
 
     expression = expression.filter(exp => exp !== undefined);
-    
+
     let openParenthesesCount = 0
     let error = undefined
 
